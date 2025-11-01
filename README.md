@@ -1,1 +1,1 @@
-# Algorythms
+# algorithmic problems
