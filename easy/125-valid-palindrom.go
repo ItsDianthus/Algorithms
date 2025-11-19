@@ -31,7 +31,23 @@ func isPalindrome(s string) bool {
 	return true
 }
 
+func isPalindrome2(s string) bool {
+	res := []rune{}
+	for _, symb := range s {
+		if unicode.IsLetter(symb) || unicode.IsDigit(symb) {
+			res = append(res, unicode.ToLower(symb))
+		}
+	}
+
+	for i, j := 0, len(res)-1; i < j; i, j = i+1, j-1 {
+		if res[i] != res[j] {
+			return false
+		}
+	}
+	return true
+}
+
 func main() {
-	isPalindrome("A s,,,, dsjss")
+	isPalindrome2("A s,,,, dsjss")
 
 }
